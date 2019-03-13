@@ -1,0 +1,85 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+ background-image: url(assets/bg.jpg);  
+ background-image: contain;
+ background-position: center;
+
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    background-color:rgba(158, 154, 93, 0.918);
+    border-radius: 15px;
+    width: 50%;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.stats {
+    width: 12%;
+    display: flex;
+    background-color:rgba(98, 154, 202, 0.918);
+    justify-content: center;
+    height: 80px;
+    margin: 10px;
+    font-size: 25px;
+    border-radius: 50px;
+}
+.stats-in{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+p{
+    margin: 0px;
+}
+td {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    margin: 0px;
+   font-size: 25px;
+}
+table{
+    border-spacing: 0px;
+    background-color: rgb(185, 185, 185);
+    box-shadow: 0px 0px 220px white;
+
+}
+.table {
+    display: flex;
+    justify-content: center;
+   
+
+}
+tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
+	background-color: rgb(12, 12, 12);
+}
+
+.hover{
+    background: rgba(163, 19, 19, 0.5) !important;
+}
+.horse{
+    width: 45px;
+}

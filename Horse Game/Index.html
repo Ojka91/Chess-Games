@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="flex-center">
+                <h1>Horse Game!</h1>
+
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="stats"><div class="stats-in"><p>Time</p> <p id="time"><span id="minutes">00</span>:<span id="seconds">00</span></p></div></div>
+            <div class="stats" ><div class="stats-in"><p>Moves</p><p id="moves"></p> </div></div>
+            <div class="stats"><div class="stats-in"><p>Options</p><p id="options"></p></div></div>
+            <div class="stats"><div class="stats-in"><p>Bonus</p><p id="bonus"></p></div></div>
+            <div class="stats"><div class="stats-in"><p>Lifes</p><p>0</p></div></div>
+        </div>
+
+
+        <div class="table">
+            <table>
+                <tr v-for="(rows, index1) in rows">
+                    <td v-for="(cells, index2) in cells" v-bind:id="cells+rows" @mouseover="mouseOver(cells,rows)"
+                     @mouseleave="mouseLeave(cells,rows)" @click="checkCell(cells, rows)">
+                    
+                    </td>
+                </tr>
+            </table>
+            
+            <div>
+
+
+
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>        
+    <script src="scripts/time_manajer.js"></script>
+    <script src="scripts/board_manager.js"></script>
+    <script src="scripts/autoplay.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
