@@ -36,8 +36,9 @@ function checkGameOver(x, y){
 
     document.getElementById("options").innerHTML = options;
     if(!options) {
+        console.log("EN TEORI ATNEO BONUS")
         if(bonus) checkCellRequired = false;
-        alert("game over");
+       else alert("game over");
     }
 }
 
@@ -104,7 +105,7 @@ function checkNewBonus(){
         //bonus cell == 2
         board[bonus_Cell_x][bonus_Cell_y]=2; 
 
-        paintBonusCell(bonus_Cell_x, bonus_Cell_y);
+        paintBonusCell(bonus_Cell_x, bonus_Cell_y);     
     }
 }
 
@@ -134,7 +135,8 @@ function checkCell(x, y){
     if(dif_x == -2 && dif_y == -1) checkTrue = true; //leftlong- top
 }
 else{
-    if(board[x][y]==0||board[x][y]==2){
+    if(board[cells.indexOf(x)][y-1]==0||board[cells.indexOf(x)][y-1]==2){
+        console.log("138")
         bonus--;
         document.getElementById("bonus").innerHTML=bonus;
     }
