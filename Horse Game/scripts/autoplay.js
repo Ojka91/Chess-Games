@@ -8,6 +8,9 @@ var board = new Array(8);
 var cellSelectedX;
 var cellSelectedY;
 var checkCellRequired;
+var level = 1;
+var lifes = 1;
+var levelMoves;
 
 var bonus;
 cells=["A", "B", "C", "D", "E", "F", "G", "H"];
@@ -36,7 +39,6 @@ function checkGameOver(x, y){
 
     document.getElementById("options").innerHTML = options;
     if(!options) {
-        console.log("EN TEORI ATNEO BONUS")
         if(bonus) checkCellRequired = false;
        else alert("game over");
     }
@@ -54,7 +56,6 @@ function checkMoves(x, y, mov_x, mov_y){
 function selectCell(x, y){
     moves--;
    document.getElementById("moves").innerHTML = moves;
-   console.log("haleluga" +x+y)
    
    if(isNaN(x)){
        board[cells.indexOf(x)][y-1] = 1;  
@@ -67,7 +68,6 @@ function selectCell(x, y){
     paintHorseCell(x, y, "green");
 
     if(isNaN(x)){
-        console.log(board[cells.indexOf(x)][y] + " WATCH")
         if(board[cells.indexOf(x)][y]==2){
             bonus ++;
             document.getElementById("bonus").innerHTML = bonus;
@@ -89,6 +89,10 @@ function selectCell(x, y){
     checkGameOver(cells.indexOf(x), y-1);
 
     checkNewBonus();
+}
+
+function growMeterBonus(){
+    movesdone
 }
 
 function checkNewBonus(){
@@ -116,10 +120,7 @@ function checkCell(x, y){
     
    checkTrue = false;
    var xdif = cells.indexOf(x)+1;
-   console.log("x = "+x);
-   console.log("xdif = "+xdif);
-   console.log("cellselected "+cellSelectedY);
-   console.log(y - cellSelectedY)
+ 
   
     dif_x = xdif - cellSelectedX-1;
     dif_y = y - cellSelectedY;
@@ -136,19 +137,17 @@ function checkCell(x, y){
 }
 else{
     if(board[cells.indexOf(x)][y-1]==0||board[cells.indexOf(x)][y-1]==2){
-        console.log("138")
         bonus--;
         document.getElementById("bonus").innerHTML=bonus;
     }
 }
-    console.log(cells.indexOf(x))
     if(board[cells.indexOf(x)][y-1] == 1) checkTrue = false;
     if(checkTrue) selectCell(x,y);
 }
 function autoplay(){
     moves = 64;
     movesRequired = 8;
-    bonus = 0;
+    bonus=0;
 
     for (i = 0; i<8; i++) board[i] = new Array(8);
     clearBoard();
